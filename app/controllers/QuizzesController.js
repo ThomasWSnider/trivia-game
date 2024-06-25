@@ -22,4 +22,12 @@ export class QuizzesController {
     setHTML('quizContainer', quizInnerHTML)
   }
 
+  answerQuiz(quizId, answer) {
+    const quizzes = AppState.quizzes
+    const quiz = quizzes.find((quiz) => quizId == quiz.id)
+    if (answer == quiz.correctAnswer) quiz.answeredCorrectly = true
+    console.log(quiz.answeredCorrectly);
+  }
+
+
 }

@@ -9,7 +9,7 @@ class QuizzesService {
 
   async getQuizzes() {
     // @ts-ignore
-    const response = await axios.get('https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=boolean')
+    const response = await axios.get('https://opentdb.com/api.php?amount=10&category=9&type=boolean')
     console.log('I got some hard questions here pal.', response);
 
     const quizzes = response.data.results.map((quiz) => new Quiz(quiz))
